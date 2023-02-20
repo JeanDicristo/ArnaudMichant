@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu et Plat
+{% endblock %}
+
+{% block body %}
+	<h1 class="textalign-center">Menu et Plat</h1>
+	<div class="container mt-4 d-flex justify-content-center">
+		{% for plat in plats %}
+			<div class="container mt-4 d-flex justify-content-center">
+				<div class="card" style="width: 18rem; text-align: center;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">{{ plat.title }}</h4>
+						<h5 class="card-title">{{ plat.price }}
+							€</h5>
+						<p class="card-text">{{ plat.description }}</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="navigation d-flex justify-content-center mt-4">
+		{{ knp_pagination_render(plats) }}
+	</div>
+
+{% endblock %}

@@ -3,10 +3,12 @@
 namespace App\DataFixtures;
 
 use App\Entity\Plat;
+use App\Entity\ProfilUser;
 use Faker\Factory;
 use Faker\Generator;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
@@ -33,6 +35,19 @@ class AppFixtures extends Fixture
             $manager->persist($plat);
 
         }
+
+        // Users
+        for ($i=0; $i < 10; $i++) { 
+            $user = new ProfilUser();
+            $user->setEmail($this->faker->email())
+            ->setRoles(['ROLE_USER'])
+            ->setPlainPassword('password');
+
+
+            $manager->persist($user);
+
+        }
+
         $manager->flush();
 }
 }
