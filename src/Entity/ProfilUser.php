@@ -28,11 +28,11 @@ class ProfilUser implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotNull()]
     private array $roles = [];
 
-    private ?string $plainPassword = null;
+    private  $plainPassword = null;
 
     #[ORM\Column]
     #[Assert\NotBlank()]
-    private ?string $password;
+    private  $password;
 
 // START GETTERS AND SETTERS
 
@@ -92,7 +92,7 @@ class ProfilUser implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->password;
     }
 
-    public function setPassword(string $password): self
+    public function setPassword($password): self
     {
         $this->password = $password;
 

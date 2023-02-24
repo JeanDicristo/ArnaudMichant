@@ -14,7 +14,7 @@ class UserListener
         $this->hasher = $hasher;
     }
 
-    public function prePresist(ProfilUser $user)
+    public function prePersist(ProfilUser $user)
     {
         $this->encodePassword($user);
     }
