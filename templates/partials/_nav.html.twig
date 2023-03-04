@@ -1,36 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{{ path('home.index') }}">Quai Antique</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor02">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{ path('home.index') }}">Quai Antique</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarColor02">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('home.index') }}">Accueil
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{path ('plat')}}">Menu et Plat</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pricing</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Créer</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Créer un plat</a>
+						<a class="dropdown-item" href="#">Créer un menu</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="{{ path('security.registration')}}">Inscription</a>
+					</div>
+				</li>
+			</ul>
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ path('home.index') }}">Accueil
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{path ('plat')}}">Menu et Plat</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Créer</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Créer un plat</a>
-            <a class="dropdown-item" href="#">Créer un menu</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
+					<a class="nav-link" href="{{ path('security.login') }}">Connexion
+					</a>
+				</li>
       </ul>
-
-    </div>
-  </div>
+		</div>
+	</div>
 </nav>

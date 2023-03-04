@@ -32,7 +32,7 @@ class ProfilUser implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     #[Assert\NotBlank()]
-    private  $password;
+    private  ?string $password = 'password';
 
 // START GETTERS AND SETTERS
 
