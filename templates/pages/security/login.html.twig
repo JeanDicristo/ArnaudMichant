@@ -6,16 +6,22 @@
 {% block body %}
 	<div class="container">
 		<h1>formulaire de connexion</h1>
+		{% if error %}
+			<div class="alert alert-danger mt-4">
+				{{ error.messageKey|trans(error.messageData, 'security') }}
+			</div>
+		{% endif %}
 
 		<form action="{{ path('security.login') }}" method="post" name="login">
 			<div class="form-group">
-				<label for="email" class="form-label mt-4">Email</label>
-				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="exemple@quaiantique.fr" name="email">
+				<label for="username" class="form-label mt-4">Email</label>
+				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="exemple@quaiantique.fr" name="_username">
 			</div>
 			<div class="form-group">
 				<label for="password" class="form-label mt-4">Mot de passe</label>
 				<input type="password" class="form-control" id="password" placeholder="********" name="_password">
 			</div>
-		<button type="submit" class="btn btn-primary">Se connecter</button>
-	</form>
-</div>{% endblock %}
+			<button type="submit" class="btn btn-primary">Se connecter</button>
+		</form>
+	</div>
+{% endblock %}
